@@ -1,6 +1,6 @@
 # Searcherries CLI
 
-Your [Searcherries](https://searcherries.com) data in the terminal: how ChatGPT, Perplexity, Google AI Overviews, Gemini, Claude and Grok answer the customer questions you track, which competitors and sources they name, and the Google Search Console, Bing Webmaster Tools and GA4 AI-traffic data of your projects. Tables for people, JSON for scripts and AI coding agents.
+Your [Searcherries](https://searcherries.com) data in the terminal: how ChatGPT, Perplexity, Google AI Overviews, Gemini, Claude and Grok answer the customer questions you track, which competitors and sources they name, and the Google Search Console, Bing Webmaster Tools and GA4 AI-traffic data of your projects. It prints tables for people and JSON for scripts and AI coding agents.
 
 The CLI is read-only. It reads the [Searcherries REST API](https://searcherries.com/docs/api/overview) and cannot change projects, questions or billing.
 
@@ -82,7 +82,7 @@ searcherries plan acme --audience seo --json
 
 ## Scripts and AI agents
 
-- `--json` prints the API response unchanged. Errors never go to stdout: they are written to stderr, as the API's `{"error": {...}}` envelope when `--json` is set.
+- `--json` prints the API response unchanged. Errors go to stderr (as the API's `{"error": {...}}` envelope when `--json` is set), so stdout only ever carries data.
 - `--all` follows the pages of `answers`, `search`, `competitors`, `citations` and `traffic` and prints them as one document.
 - `searcherries api '/projects/123/answers?prominence_max=1'` calls any endpoint of the [REST API reference](https://searcherries.com/docs/api/endpoints). Full URLs under the API work too, such as the `next_request` links of an action plan.
 - The rate limit is 30 requests a minute on Free, 60 on Starter and 120 on Pro. On a `429` the CLI waits as long as the API asks (up to a minute) and retries.
