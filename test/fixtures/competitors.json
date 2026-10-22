@@ -1,0 +1,92 @@
+{
+  "project": {
+    "id": 1,
+    "brand_name": "Acme",
+    "brand_website": "https://example.com",
+    "status": "ready"
+  },
+  "dataset": "ranking",
+  "period": {
+    "key": "last_30_days",
+    "requested": "last_30_days",
+    "start": "2026-09-23",
+    "end": "2026-10-22",
+    "days": 30,
+    "anchored_to_latest_check": "2026-10-22",
+    "available_periods": ["last_30_days"]
+  },
+  "ranked_by": "visibility_percentage",
+  "platforms": ["chatgpt", "perplexity", "ai_overviews"],
+  "rows": [
+    {
+      "rank": 1,
+      "competitor_name": "Rival",
+      "competitor_website": "rival.example",
+      "is_own_brand": false,
+      "visibility_percentage": 99,
+      "average_position": 1.5,
+      "mention_count": 80,
+      "citation_count": 8,
+      "platforms_mentioning": 2,
+      "platform_mentions": {
+        "chatgpt": 70,
+        "perplexity": 10
+      },
+      "platform_average_positions": {
+        "chatgpt": 1.5
+      },
+      "platform_citations": {
+        "chatgpt": 8
+      },
+      "platform_highlights": {
+        "chatgpt": ["Affordable", "Fast setup", "Great support"]
+      }
+    },
+    {
+      "rank": 2,
+      "competitor_name": "Otterly",
+      "competitor_website": "otterly.example",
+      "is_own_brand": false,
+      "visibility_percentage": 65.6,
+      "average_position": 1.5,
+      "mention_count": 25,
+      "citation_count": 4,
+      "platforms_mentioning": 2,
+      "platform_mentions": {
+        "chatgpt": 20,
+        "perplexity": 5
+      },
+      "platform_average_positions": {
+        "chatgpt": 1.5
+      },
+      "platform_citations": {
+        "chatgpt": 4
+      },
+      "platform_highlights": {
+        "chatgpt": ["Affordable", "Fast setup", "Great support"]
+      }
+    },
+    {
+      "rank": 3,
+      "competitor_name": "Acme",
+      "competitor_website": "https://example.com",
+      "is_own_brand": true,
+      "visibility_percentage": 0,
+      "average_position": 0,
+      "mention_count": 0,
+      "citation_count": 0,
+      "platforms_mentioning": 0,
+      "platform_mentions": [],
+      "platform_average_positions": [],
+      "platform_citations": [],
+      "platform_highlights": []
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "limit": 15,
+    "returned": 3,
+    "total": 3,
+    "has_more": false
+  }
+}

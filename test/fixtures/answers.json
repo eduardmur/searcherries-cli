@@ -1,0 +1,99 @@
+{
+  "project": {
+    "id": 1,
+    "brand_name": "Acme",
+    "brand_website": "https://example.com",
+    "status": "ready"
+  },
+  "period": {
+    "start": "2026-09-23",
+    "end": "2026-10-22",
+    "source": "last_30_days"
+  },
+  "answer_text_included": false,
+  "max_answer_chars": null,
+  "rows": [
+    {
+      "id": 1,
+      "check_date": "2026-10-22",
+      "platform": "chatgpt",
+      "prompt_id": 1,
+      "question": "Which analytics platform should I use?",
+      "topic": null,
+      "is_primary_question": true,
+      "brand_mentioned": true,
+      "cited_own_site": true,
+      "citation_count": 2,
+      "citation_urls": ["https://example.com/guide", "https://industry.example/review"],
+      "search_queries": ["best analytics platform 2026"],
+      "insight": {
+        "prominence_level": 3,
+        "prominence": "top recommendation",
+        "prominence_confidence": 0.9,
+        "on_topic": 0.95,
+        "names_brands": 0.97,
+        "brand_sentiment": "positive",
+        "brand_drawback": 0.1,
+        "attention": null,
+        "evidence_quote": null
+      }
+    },
+    {
+      "id": 2,
+      "check_date": "2026-10-21",
+      "platform": "perplexity",
+      "prompt_id": 1,
+      "question": "Which analytics platform should I use?",
+      "topic": null,
+      "is_primary_question": true,
+      "brand_mentioned": true,
+      "cited_own_site": false,
+      "citation_count": 1,
+      "citation_urls": ["https://rival.example/compare"],
+      "search_queries": ["best analytics platform 2026"],
+      "insight": {
+        "prominence_level": 1,
+        "prominence": "named in passing",
+        "prominence_confidence": 0.9,
+        "on_topic": 0.95,
+        "names_brands": 0.97,
+        "brand_sentiment": "neutral",
+        "brand_drawback": 0.1,
+        "attention": null,
+        "evidence_quote": null
+      }
+    },
+    {
+      "id": 3,
+      "check_date": "2026-10-20",
+      "platform": "chatgpt",
+      "prompt_id": 2,
+      "question": "Best analytics platform for startups?",
+      "topic": null,
+      "is_primary_question": false,
+      "brand_mentioned": true,
+      "cited_own_site": false,
+      "citation_count": 0,
+      "citation_urls": [],
+      "search_queries": ["best analytics platform 2026"],
+      "insight": {
+        "prominence_level": 2,
+        "prominence": "one of the options",
+        "prominence_confidence": 0.9,
+        "on_topic": 0.95,
+        "names_brands": 0.97,
+        "brand_sentiment": "negative",
+        "brand_drawback": 0.9,
+        "attention": "negative",
+        "evidence_quote": "Acme is expensive for startups."
+      }
+    }
+  ],
+  "pagination": {
+    "offset": 0,
+    "limit": 3,
+    "returned": 3,
+    "total": 82,
+    "has_more": true
+  }
+}

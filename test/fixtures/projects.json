@@ -1,0 +1,99 @@
+{
+  "total": 2,
+  "projects": [
+    {
+      "id": 1,
+      "brand_name": "Acme",
+      "brand_website": "https://example.com",
+      "status": "ready",
+      "plan": "starter",
+      "ai_tracking": true,
+      "country": "us",
+      "language": "en",
+      "selected_ai_models": ["chatgpt", "perplexity", "ai_overviews"],
+      "last_checked_at": "2026-10-22T10:56:55+00:00",
+      "connections": {
+        "ga4": false,
+        "google_search_console": false,
+        "bing_webmaster_tools": false
+      },
+      "connected_data": {
+        "ga4": {
+          "latest_fetched_at": "2026-10-22T10:56:55+00:00",
+          "is_stale": false
+        },
+        "google_search_console": {
+          "latest_fetched_at": "2026-10-22T10:56:55+00:00",
+          "is_stale": false
+        },
+        "bing_webmaster_tools": {
+          "latest_fetched_at": null,
+          "is_stale": null,
+          "needs_reauth": false
+        }
+      },
+      "data_availability": {
+        "metrics": true,
+        "metrics_fetched_at": "2026-10-22T00:00:00+00:00",
+        "latest_check_date": "2026-10-22",
+        "topics": 0,
+        "prompts": 3,
+        "mentions": 124,
+        "answer_insights": 63,
+        "competitor_snapshots": 3,
+        "top_site_snapshots": 0,
+        "trust_mentions": 0,
+        "recommendations": 0,
+        "ga4_snapshots": 2,
+        "search_performance_snapshots": 2
+      }
+    },
+    {
+      "id": 2,
+      "brand_name": "Second Brand",
+      "brand_website": "https://second.example",
+      "status": "ready",
+      "plan": "starter",
+      "ai_tracking": true,
+      "country": "us",
+      "language": "en",
+      "selected_ai_models": ["chatgpt", "perplexity", "ai_overviews"],
+      "last_checked_at": "2026-10-22T10:56:55+00:00",
+      "connections": {
+        "ga4": false,
+        "google_search_console": false,
+        "bing_webmaster_tools": false
+      },
+      "connected_data": {
+        "ga4": {
+          "latest_fetched_at": null,
+          "is_stale": null
+        },
+        "google_search_console": {
+          "latest_fetched_at": null,
+          "is_stale": null
+        },
+        "bing_webmaster_tools": {
+          "latest_fetched_at": null,
+          "is_stale": null,
+          "needs_reauth": false
+        }
+      },
+      "data_availability": {
+        "metrics": false,
+        "metrics_fetched_at": null,
+        "latest_check_date": null,
+        "topics": 0,
+        "prompts": 0,
+        "mentions": 0,
+        "answer_insights": 0,
+        "competitor_snapshots": 0,
+        "top_site_snapshots": 0,
+        "trust_mentions": 0,
+        "recommendations": 0,
+        "ga4_snapshots": 0,
+        "search_performance_snapshots": 0
+      }
+    }
+  ]
+}

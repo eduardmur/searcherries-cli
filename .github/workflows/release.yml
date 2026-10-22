@@ -1,0 +1,44 @@
+name: Release
+
+# Pushing a tag like v0.1.1 publishes that version to npm with trusted
+# publishing (no token in the repo) and creates a GitHub release. The tag must
+# match the version in package.json.
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the GitHub release
+      id-token: write # npm trusted publishing (OIDC) and provenance
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      # Trusted publishing needs npm 11.5.1 or newer; Node 22 bundles npm 10.
+      - run: npm install -g npm@latest
+      - name: Check that the tag matches package.json
+        run: |
+          node -e '
+            const tag = process.env.GITHUB_REF_NAME;
+            const version = require("./package.json").version;
+            if (tag !== `v${version}`) {
+              console.error(`tag ${tag} but package.json ${version}`);
+              process.exit(1);
+            }
+          '
+      - run: npm ci
+      - run: npx biome ci .
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm publish --provenance --access public
+      - name: Create the GitHub release
+        run: gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

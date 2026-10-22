@@ -1,0 +1,59 @@
+{
+  "name": "searcherries",
+  "version": "0.1.0",
+  "description": "Searcherries in the terminal: AI visibility, AI answers, competitors, citations, Search Console, Bing and GA4 AI-traffic data for your projects, read-only, as tables or JSON.",
+  "keywords": [
+    "searcherries",
+    "cli",
+    "geo",
+    "generative-engine-optimization",
+    "ai-visibility",
+    "ai-search",
+    "llm-seo",
+    "seo",
+    "google-search-console",
+    "bing-webmaster-tools",
+    "ga4",
+    "chatgpt",
+    "perplexity",
+    "ai-overviews"
+  ],
+  "license": "MIT",
+  "author": "Searcherries <hello@searcherries.com> (https://searcherries.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardmur/searcherries-cli.git"
+  },
+  "homepage": "https://searcherries.com/docs/api/cli",
+  "bugs": "https://github.com/eduardmur/searcherries-cli/issues",
+  "type": "module",
+  "bin": {
+    "searcherries": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}
