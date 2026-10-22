@@ -15,14 +15,17 @@ import { CliError, EXIT, UsageError } from "../src/errors.js";
 import { tempConfigDir } from "./helpers.js";
 
 describe("configDir", () => {
+  // Paths are joined with the separator of the machine running the tests.
   it("follows each platform's convention", () => {
     expect(configDir({}, "darwin", "/Users/a")).toBe(
-      "/Users/a/Library/Application Support/searcherries",
+      join("/Users/a", "Library", "Application Support", "searcherries"),
     );
-    expect(configDir({}, "linux", "/home/a")).toBe("/home/a/.config/searcherries");
-    expect(configDir({ XDG_CONFIG_HOME: "/xdg" }, "linux", "/home/a")).toBe("/xdg/searcherries");
-    expect(configDir({ APPDATA: "C:\\Roaming" }, "win32", "C:\\Users\\a")).toContain(
-      "searcherries",
+    expect(configDir({}, "linux", "/home/a")).toBe(join("/home/a", ".config", "searcherries"));
+    expect(configDir({ XDG_CONFIG_HOME: "/xdg" }, "linux", "/home/a")).toBe(
+      join("/xdg", "searcherries"),
+    );
+    expect(configDir({ APPDATA: "C:\\Roaming" }, "win32", "C:\\Users\\a")).toBe(
+      join("C:\\Roaming", "searcherries"),
     );
   });
 
